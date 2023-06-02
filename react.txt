@@ -1,0 +1,90 @@
+App.js
+import './App.css';
+import {BrowserRouter, Route, Routes} from 'react-roooter-dom';
+import Booklisting from "./Booklisting.js";
+import BookCreate from "./BookDetail";
+import BookEdit from "./BookEdit";
+
+function App(){
+return (
+<div className='App'>
+<h1>Harry Potter</h1>
+<BrowserRouter>
+<Route>
+<Routes path='/' element={<Booklisting/>}</Routes>
+<Routes path= '/books/create' element={<BookCreate/>}></Routes>
+<Routes path='/books/create/:boowid' element={<BookDetail/>}></Routes>
+<Routes path= '/books/edit/:oookid' element={<BookEdit/>}></Routes>
+</Route>
+</BrowserRouter>
+</div>
+);
+}
+export default App;
+
+BookC
+import {useState} from "react";
+
+const BookCreate =()=>{
+ const[id string, idchange]=useState(mintaState '');
+const[title string, titlechange]=useState(mintaState '');
+const[pages string, pageschange]=useState(mintaState '');
+const[public_date string, public_datechange]=useState(mintaState '');
+const navigate NavigatesFunction = useNavigate();
+
+}
+
+import{Link, useParams} from 'react-router-dom';
+import {useEffect, useState} from 'react';
+
+const BookDetail = () =>{
+const {bookid : string} = useParams;
+const [bookdata : bookdatachange]=useState(mintaState{})
+useEffect (effect()=>{
+fetch(input "http://localhost:8000/api/books"+ bookid).then((res :){
+return res.JSON();}).then(resp)=>{bookdatachange(resp);}).catch(err)=>{
+console.log(err.message)}
+}[]);
+
+
+
+}
+
+PagesFuctional.js
+import{useState,useEffect,useRef} from 'react';
+export default fuction Pages(props)
+{const [currentPage, setCurrentPage]=useState("Home");
+
+useEffect(()=>{
+console.log("*** updated **");
+},[]);
+
+return(
+<>
+<div className="App App-header">
+<button onClick={()=>setCurrentPage("Home")}>Főoldal</button>
+<button onClick={()=>props.logOut()}>Kijelentkezes</button>
+{currentPage}
+</div>
+</>
+);
+} 
+
+index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import'./index.css';
+import App from './App';
+import CleanupExample from './mastering-cleanups/CleanupExample'
+import PagesFunctional from './Pagesfunctional';
+import reportWebVitals from './reportWebVitals';
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>,
+document.getElementById('root')
+);
+reportWebVitals();
+
+

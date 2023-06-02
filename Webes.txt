@@ -1,0 +1,17 @@
+background-positoin:center;
+background-repeat: no-repat;
+border:2px solid;
+box-shadow: 2px;
+<div class="row">
+<div class="col-md-6">
+<link rel="stylesheet" href="style.css">
+text-align center
+<img class="card-img-top">
+
+CMD
+mappába cd C:\xampp\htdocs
+composer create-project laravel/laravel NEVE --prefer-dist
+npm install create-react-app -g
+REACT MAPPÁBA kell!
+npx create -react app my-app
+npm start
