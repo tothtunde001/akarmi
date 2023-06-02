@@ -1,0 +1,29 @@
+
+
+            //adatbázis
+
+            string connentionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=20230426;";
+
+            MySqlConnection databaseConnection = new MySqlConnection(connentionString);
+
+            databaseConnection.Open();
+
+            MySqlCommand adat = databaseConnection.CreateCommand();
+
+ 
+
+            foreach (var item in eredmenyek)
+
+            {
+
+                adat.CommandText = "INSERT INTO `eredmenyek`(`hazai`, `idegen`, `hazai_pont`, `idegen_pont`, `helyszin`, `idopont`) VALUES ('" + item.Hazai + "','" + item.Idegen + "'," + item.Hazai_pont.ToString() + "," + item.Idegen_pont.ToString() + ",'" + item.Helyszin + "','" + item.Idopont.ToString() + "')";
+
+                //le kell futtatni:
+
+                adat.ExecuteNonQuery();
+
+ 
+
+            }
+
+            databaseConnection.Close();
